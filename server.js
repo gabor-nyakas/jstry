@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.json({ message: 'Hello Mr. API server! :)' });
+  res.json({ message: 'Hello Mr. API server!! :)' });
 });
 
 const callback = () => {
