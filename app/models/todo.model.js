@@ -15,7 +15,7 @@ module.exports = (sequelize, Sequelize) => {
         type: Sequelize.DATE
       }
     },
-    { timestamps: false, freezeTableName: true }
+    { timestamps: false, freezeTableName: true /* version: true*/ }
   );
 
   return Todo;
