@@ -1,13 +1,13 @@
 const db = require('../models');
 const Todo = db.todo;
-const Op = db.Sequelize.Op;
+//const Op = db.Sequelize.Op;
 
 // Retrieve all Tutorials from the database.
 exports.findAll = (req, res) => {
-  const title = req.query.title;
-  var condition = title ? { title: { [Op.like]: `%${title}%` } } : null;
+  //const title = req.query.title;
+  //var condition = title ? { title: { [Op.like]: `%${title}%` } } : null;
 
-  Todo.findAll({ where: condition })
+  Todo.findAll(/*{ where: condition }*/)
     .then(data => {
       res.send(data);
     })
