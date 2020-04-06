@@ -1,12 +1,13 @@
-module.exports = app => {
-  const todoService = require('../services/todo.service.js');
+import express from 'express';
+import { findAll } from '../services/todo.service.js';
 
-  var router = require('express').Router();
+export default app => {
+  var router = express.Router();
 
   const todoURL = '/todo';
 
   // Retrieve all Tutorials
-  router.get(`${todoURL}`, todoService.findAll);
+  router.get(`${todoURL}`, findAll);
 
   app.use('/api/', router);
 };

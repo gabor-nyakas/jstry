@@ -1,9 +1,9 @@
-const db = require('../models');
+import db from '../models/index.js';
 const Todo = db.todo;
 //const Op = db.Sequelize.Op;
 
 // Retrieve all Tutorials from the database.
-exports.findAll = (req, res) => {
+export function findAll(req, res) {
   //const title = req.query.title;
   //var condition = title ? { title: { [Op.like]: `%${title}%` } } : null;
 
@@ -16,4 +16,4 @@ exports.findAll = (req, res) => {
         message: err.message || 'Some error occurred while retrieving tutorials.'
       });
     });
-};
+}

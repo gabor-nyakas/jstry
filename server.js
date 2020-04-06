@@ -1,5 +1,7 @@
-const express = require('express');
-const serverConfig = require('./app/config/server.config');
+import express from 'express';
+import { PORT, ENV } from './app/config/server.config.js';
+
+import todoController from './app/controllers/todo.controller.js';
 
 const app = express();
 
@@ -9,11 +11,11 @@ app.get('/', (req, res) => {
   res.json({ message: 'Hello Mr. API server!!' });
 });
 
-require('./app/controllers/todo.controller')(app);
+todoController(app);
 
 const callback = () => {
-  console.log(`\tApp is running at http://localhost:${serverConfig.PORT} in ${serverConfig.ENV} mode`);
+  console.log(`\tApp is running at http://localhost:${PORT} in ${ENV} mode`);
   console.log('\tPress CTRL-C to stop\n');
 };
 
-app.listen(serverConfig.PORT, callback);
+app.listen(PORT, callback);
