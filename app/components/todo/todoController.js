@@ -1,5 +1,5 @@
 import express from 'express';
-import { findAll } from '../services/todo.service.js';
+import { findAll } from './todoService.js';
 
 export default app => {
   var router = express.Router();

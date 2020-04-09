@@ -1,4 +1,4 @@
-import db from '../models/index.js';
+import db from './index.js';
 const Todo = db.todo;
 //const Op = db.Sequelize.Op;
 

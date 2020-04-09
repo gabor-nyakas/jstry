@@ -1,6 +1,6 @@
-import { DB, USER, PASSWORD, HOST, dialect as _dialect, pool as _pool } from '../config/db.config.js';
+import { DB, USER, PASSWORD, HOST, dialect as _dialect, pool as _pool } from '../../config/db.config.js';
 import Sequelize from 'sequelize';
-import todoModel from './todo.model.js';
+import todoModel from './todoModel.js';
 
 const sequelize = new Sequelize(DB, USER, PASSWORD, {
   host: HOST,

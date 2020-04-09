@@ -1,7 +1,7 @@
 import express from 'express';
 import { PORT, ENV } from './app/config/server.config.js';
 
-import todoController from './app/controllers/todo.controller.js';
+import todoController from './app/components/todo/todoController.js';
 
 const app = express();
 
