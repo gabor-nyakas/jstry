@@ -32,7 +32,8 @@ export function create(req, res) {
   const todo = {
     title: req.body.title,
     todoText: req.body.todoText,
-    published: req.body.published ? req.body.published : false
+    published: req.body.published ? req.body.published : false,
+    created: req.body.created
   };
 
   // Save Tutorial in the database
