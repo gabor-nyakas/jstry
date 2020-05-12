@@ -1,8 +1,8 @@
-import db from './index.js';
+import db from '../../db/index.js';
 const Todo = db.todo;
 //const Op = db.Sequelize.Op;
 
-// Retrieve all Tutorials from the database.
+// Retrieve all Todos from the database.
 export function findAll(req, res) {
   //const title = req.query.title;
   //var condition = title ? { title: { [Op.like]: `%${title}%` } } : null;
@@ -18,7 +18,7 @@ export function findAll(req, res) {
     });
 }
 
-// Create and Save a new Tutorial
+// Create and Save a new Todo
 export function create(req, res) {
   // Validate request
   if (!req.body.title) {
@@ -28,7 +28,7 @@ export function create(req, res) {
     return;
   }
 
-  // Create a Tutorial
+  // Create a Todo
   const todo = {
     title: req.body.title,
     todoText: req.body.todoText,
@@ -36,7 +36,7 @@ export function create(req, res) {
     created: req.body.created
   };
 
-  // Save Tutorial in the database
+  // Save Todo in the database
   Todo.create(todo)
     .then(data => {
       res.send(data);
